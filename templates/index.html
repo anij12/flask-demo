@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Contact V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href=""{{ url_for('static' , filename='images/icons/favicon.ico/')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='vendor/bootstrap/css/bootstrap.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='vendor/animate/animate.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='vendor/css-hamburgers/hamburgers.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='vendor/select2/select2.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css/util.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css/main.css')}}">
+    <style>
+    #ani{
+      margin-left: 50%;
+    }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">top5</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Login</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      Action
+    </button>
+    <button id="ani" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      click me to login
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    {{name}}
+    <div class="contact1">
+      <div class="container-contact1">
+        <div class="contact1-pic js-tilt" data-tilt>
+          <img src="{{ url_for('static' , filename='images/img-01.png')}}" alt="IMG">
+        </div>
+  
+        <form class="contact1-form validate-form" method="post" action="/fill">
+          <span class="contact1-form-title">
+            Get in touch
+          </span>
+  
+          <div class="wrap-input1 validate-input" data-validate = "Name is required">
+            <input class="input1" type="text" name="name" placeholder="Name">
+            <span class="shadow-input1"></span>
+          </div>
+  
+          <div class="wrap-input1 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+            <input class="input1" type="text" name="email" placeholder="Email">
+            <span class="shadow-input1"></span>
+          </div>
+  
+          <div class="wrap-input1 validate-input" data-validate = "Subject is required">
+            <input class="input1" type="text" name="subject" placeholder="Subject">
+            <span class="shadow-input1"></span>
+          </div>
+  
+          <div class="wrap-input1 validate-input" data-validate = "Message is required">
+            <textarea class="input1" name="message" placeholder="Message"></textarea>
+            <span class="shadow-input1"></span>
+          </div>
+  
+          <div class="container-contact1-form-btn">
+            <button class="contact1-form-btn">
+              <span>
+                Send Email
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+  
+  
+  
+  <!--===============================================================================================-->
+    <script src="{{ url_for('static' , filename='vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+  <!--===============================================================================================-->
+    <script src="{{ url_for('static' , filename='vendor/bootstrap/js/popper.js')}}"></script>
+    <script src="{{ url_for('static' , filename='vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+  <!--===============================================================================================-->
+    <script src="{{ url_for('static' , filename='vendor/select2/select2.min.js')}}"></script>
+  <!--===============================================================================================-->
+    <script src="{{ url_for('static' , filename='vendor/tilt/tilt.jquery.min.js')}}"></script>
+    <script >
+      $('.js-tilt').tilt({
+        scale: 1.1
+      })
+    </script>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-23581568-13');
+  </script>
+  
+  <!--===============================================================================================-->
+    <script src="{{ url_for('static' , filename='js/main.js')}}"></script>
+  
+  </body>
+  </html>
